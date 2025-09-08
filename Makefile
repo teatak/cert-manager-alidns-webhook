@@ -30,7 +30,9 @@ clean-kubebuilder:
 	rm -Rf _test/kubebuilder
 
 build:
-	docker build -t "$(IMAGE_NAME):$(IMAGE_TAG)" .
+	docker build --platform linux/arm64,linux/amd64 -t crpi-1utm44cslqy1tif4.cn-beijing.personal.cr.aliyuncs.com/teatak-public/alidns-webhook:latest --push . 
+# 	docker push <your registry>/alidns-webhook
+# 	docker build -t "$(IMAGE_NAME):$(IMAGE_TAG)" .
 
 .PHONY: rendered-manifest.yaml
 rendered-manifest.yaml:
